@@ -230,7 +230,9 @@ h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.0
   .hero__text{max-width:100%}
   .lead{max-width:100%}
   /* foto/rosto da Carla em primeiro, no topo (como os sites modelo) */
-  .hero__media{order:-1;max-width:380px;margin-inline:auto;width:100%}
+  .hero__media{order:-1;max-width:360px;margin-inline:auto;width:100%}
+  .photo--hero{aspect-ratio:1/1}
+  .photo--hero img{object-position:center 8%}
   .home__inner,.sobre__inner,.local__inner{grid-template-columns:1fr;gap:34px}
   .sobre__quote{order:-1}
   .footer__inner{grid-template-columns:1fr 1fr}
@@ -253,7 +255,8 @@ h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.0
   .local__map iframe{height:280px}
   .footer__inner{grid-template-columns:1fr}
   .footer__base{flex-direction:column;gap:10px;text-align:center}
-  .badge-float{left:0}
+  /* selo flutuante sai no mobile (seguindo os sites modelo, foto limpa) */
+  .badge-float{display:none}
 }
 
 @media (prefers-reduced-motion:reduce){

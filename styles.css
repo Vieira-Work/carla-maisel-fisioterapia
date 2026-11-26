@@ -226,10 +226,11 @@ h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.0
   .nav__inner{gap:12px}
   .brand__text strong,.brand__text small{white-space:nowrap}
   .nav .btn{white-space:nowrap}
-  .hero__inner{grid-template-columns:1fr;gap:34px;min-height:auto;padding:20px 0 10px}
+  .hero__inner{grid-template-columns:1fr;gap:26px;min-height:auto;padding:14px 0 10px}
   .hero__text{max-width:100%}
   .lead{max-width:100%}
-  .hero__media{max-width:360px;margin-inline:auto;width:100%}
+  /* foto/rosto da Carla em primeiro, no topo (como os sites modelo) */
+  .hero__media{order:-1;max-width:380px;margin-inline:auto;width:100%}
   .home__inner,.sobre__inner,.local__inner{grid-template-columns:1fr;gap:34px}
   .sobre__quote{order:-1}
   .footer__inner{grid-template-columns:1fr 1fr}

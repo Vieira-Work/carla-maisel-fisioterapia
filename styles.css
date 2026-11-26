@@ -19,21 +19,25 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 body{
   font-family:"Figtree",system-ui,sans-serif;
   color:var(--ink);
   background:var(--cream);
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
 }
+/* itens de grid/flex podem encolher abaixo do conteúdo (evita overflow horizontal) */
+.hero__inner>*,.home__inner>*,.sobre__inner>*,.local__inner>*,
+.footer__inner>*,.area>*{min-width:0}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 em{font-style:italic}
 
 .wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:24px}
 
-h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
+h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.01em;overflow-wrap:break-word}
 
 .eyebrow{
   display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.14em;
@@ -218,19 +222,29 @@ h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.0
 /* ---- Responsive ---- */
 @media (max-width:900px){
   .nav__links{display:none}
+  .nav__inner{gap:12px}
+  .brand__text strong,.brand__text small{white-space:nowrap}
+  .nav .btn{white-space:nowrap}
   .hero__inner{grid-template-columns:1fr;gap:34px;min-height:auto;padding:20px 0 10px}
-  .hero__media{max-width:440px;margin-inline:auto;width:100%}
+  .hero__text{max-width:100%}
+  .lead{max-width:100%}
+  .hero__media{max-width:360px;margin-inline:auto;width:100%}
   .home__inner,.sobre__inner,.local__inner{grid-template-columns:1fr;gap:34px}
   .sobre__quote{order:-1}
   .footer__inner{grid-template-columns:1fr 1fr}
 }
 @media (max-width:560px){
   .wrap{padding-inline:18px}
-  .hero h1{font-size:clamp(2.2rem,9vw,3rem)}
-  .area{grid-template-columns:1fr;gap:10px}
-  .area__num{font-size:1.6rem}
+  .hero h1{font-size:clamp(2.05rem,8vw,3rem)}
+  .hero__cta{gap:10px}
+  .hero__cta .btn{flex:1 1 auto;justify-content:center}
+  .area{grid-template-columns:auto 1fr;gap:6px 16px}
+  .area__num{font-size:1.5rem;min-width:40px}
+  .area__body{grid-column:1/-1}
+  .queixas__grid{grid-template-columns:1fr}
+  .local__map iframe{height:280px}
   .footer__inner{grid-template-columns:1fr}
-  .footer__base{flex-direction:column;gap:10px}
+  .footer__base{flex-direction:column;gap:10px;text-align:center}
   .badge-float{left:0}
 }
 
